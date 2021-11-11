@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "test": "jest",
+    "test:coverage": "jest --collect-coverage"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -14,6 +16,9 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.2",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
@@ -21,7 +26,10 @@
     "eslint-config-next": "12.0.3",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
+    "jest-fetch-mock": "^3.0.3",
     "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
     "typescript": "4.4.4"
   }
 }
