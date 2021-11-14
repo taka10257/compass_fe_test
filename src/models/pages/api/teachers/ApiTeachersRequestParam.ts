@@ -1,7 +1,8 @@
 import type { NextApiRequest } from 'next'
 import { TeacherApiQueryParams } from '../../../../types/apis/teacher/TeacherApiQueryParams'
+import { ApiTeachersRequest } from '../../../../types/pages/api/ApiTeachersRequest'
 
-export default class ApiTeachersRequestParam {
+export default class ApiTeachersRequestParam implements ApiTeachersRequest {
   page: string
   limit: string
   sort: string
