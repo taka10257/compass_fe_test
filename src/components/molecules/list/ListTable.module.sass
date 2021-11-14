@@ -1,0 +1,36 @@
+@import "src/styles/color"
+@import "src/styles/font"
+
+.container
+  display: flex
+  align-items: center
+  justify-content: center
+  table
+    margin: auto
+    thead
+      tr
+        border: none
+        background-color: $green_dark
+        th
+          border-color: $green_dark $border_input $green_dark $green_dark
+          &:last-child
+            border-right-color: $green_dark
+    tbody
+      tr
+        border-width: 1px
+        &:nth-child(even)
+          background-color: $gray_light
+        td
+          padding: 16px
+          font-weight: $font_weight_normal
+          text-overflow: ellipsis
+          overflow: hidden
+          white-space: nowrap
+          border: none
+          &:first-child
+            font-size: $font_size_normal
+          &:last-child
+            font-size: $font_size_small
+            vertical-align: middle
+.header
+  padding: 0 !important

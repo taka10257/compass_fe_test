@@ -1,0 +1,23 @@
+@import "src/styles/mixin_breakpoint"
+@import "src/styles/font"
+
+.page_display
+  display: flex
+  justify-content: flex-end
+
+.page_control
+  display: flex
+  justify-content: flex-end
+  margin-top: 16px
+
+
++breakpoint('sm')
+  .container
+    display: flex
+    justify-content: space-between
+  .page_display
+    justify-content: inherit
+
+  .page_control
+    justify-content: inherit
+    margin-top: 0

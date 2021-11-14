@@ -1,0 +1,49 @@
+@import "src/styles/color"
+@import "src/styles/font"
+
+.container
+  display: flex
+  ul
+    display: flex
+    margin: 0
+    li
+      list-style-type: none
+
+.button
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $gray_dark
+    border-radius: 4px
+    font-size: $font_size_small
+    font-weight: $font_weight_bold
+
+.next,
+.prev
+  a
+    width: 42px
+    height: 24px
+
+.page
+  margin-left: 8px
+  a
+    width: 24px
+    height: 24px
+
+.next
+  margin-left: 16px
+
+.prev
+  margin-right: 8px
+
+.active
+  // bootstrapのcssに影響を受けてしまうので、この書き方をしている
+  a:not([href]):not([class])
+    background-color: $green_dark
+    color: $white
+    pointer-events: none
+
+.disabled
+  opacity: 0.3
+  pointer-events: none
