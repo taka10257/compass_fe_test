@@ -1,7 +1,8 @@
 import type { NextApiRequest } from 'next'
 import { TeacherApiQueryParams } from '../../../../types/apis/teacher/TeacherApiQueryParams'
+import { ApiTeachersRequest } from '../../../../types/pages/api/ApiTeachersRequest'
 
-export default class ApiTeachersRequestParam {
+export default class ApiTeachersRequestParam implements ApiTeachersRequest {
   page: string
   limit: string
   sort: string
@@ -12,7 +13,7 @@ export default class ApiTeachersRequestParam {
     this.page = req.query.page ? req.query.page.toString() : ''
     this.limit = req.query.limit ? req.query.limit.toString() : ''
     this.sort = req.query.sort ? req.query.sort.toString() : ''
-    this.order = req.query.sort ? req.query.order.toString() : ''
+    this.order = req.query.order ? req.query.order.toString() : ''
     this.searchWord = req.query.searchWord
       ? req.query.searchWord.toString()
       : ''
