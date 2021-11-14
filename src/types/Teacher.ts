@@ -3,3 +3,5 @@ export type Teacher = {
   name: string
   loginId: string
 }
+
+export type TeacherSortColumn = 'name' | 'loginId'
