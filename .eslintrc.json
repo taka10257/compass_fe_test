@@ -21,8 +21,6 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-  ],
-  "rules": {
-  }
+  "plugins": [],
+  "rules": {}
 }
