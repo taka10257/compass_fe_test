@@ -1,0 +1,43 @@
+@import "src/styles/mixin_breakpoint"
+@import "src/styles/font"
+@import "src/styles/color"
+
+.container
+  max-width: 800px
+  margin: auto
+  padding: 24px 2% 64px
+
+.header
+  .title
+    display: flex
+
+  .search_block
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    margin-top: 16px
+    .search
+      width: 336px
+
+.no_data
+  margin: 40px auto auto 16px
+  color: $green_light
+
+.contents
+  margin-top: 24px
+
+.footer
+  margin-top: 24px
+
+
++breakpoint('sm')
+  .container
+    padding: 24px 0 64px
+  .header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .search_block
+      margin-top: 0
+
+
