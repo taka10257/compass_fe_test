@@ -1,34 +1,126 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# COMPASS課題
 
-## Getting Started
+## 本番環境
 
-First, run the development server:
+https://tsuzuki-compass-fe-test.vercel.app/
 
-```bash
-npm run dev
-# or
+---
+
+## 環境
+
+- yarn@1.22.17
+- node@14.18.1
+
+### test
+
+- jest
+
+### lint
+
+- eslint
+
+### format
+
+- prettier
+
+---
+
+## 開発環境セットアップ
+
+### env ファイル作成
+
+```shell
+touch .env.local
+```
+
+- env ファイルにパラメーターを追加
+
+```
+API_ENDPOINT=<API ENDPOINT URL>
+```
+
+### アプリケーション起動
+
+```shell
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [http://localhost:3000](http://localhost:3000) にアクセス
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## コマンド
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### テスト
 
-## Learn More
+```shell
+yarn test
+```
 
-To learn more about Next.js, take a look at the following resources:
+テストカバレッジ確認
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+yarn test-coverage
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### lint
 
-## Deploy on Vercel
+```shell
+yarn lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+自動修正込み
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### format
+
+```shell
+yarn format
+```
+
+### 本番環境動作確認
+
+```shell
+yarn build && yarn start
+```
+
+---
+
+# 説明
+
+## コンポーネント
+
+- `atomic design` を意識して作成しました
+- コンポーネントのサイズ・マージンなどは呼び出し側で指定することを前提としています。
+
+## ページネーション
+
+- `react-paginate` を利用しました。
+
+## 一覧テーブル
+
+- `react-bootstrap-table-next` を利用しました。
+  - ブラウザコンソールに以下の警告が出ます。
+  - このモジュールに問題がありそうですが、モジュールの入れ替えの余裕がなかったので、警告が出ます。
+  - 参考: https://teratail.com/questions/252889
+
+```
+Warning: Using UNSAFE_componentWillReceiveProps in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
+
+* Move data fetching code or side effects to componentDidUpdate.
+* If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
+
+Please update the following components: DataProvider
+```
+
+## state 管理
+
+- [flux パターン](https://qiita.com/knhr__/items/5fec7571dab80e2dcd92) を意識して作成しました。
+  - 基本パターン通りに作成されていないですが、概念はそんなに間違っていない気がしています。
+
+## API コール
+
+- 一応エンドポイントを隠蔽できる構成にしました。
+
+## テスト
+
+- 余裕なかったのでほとんど作成できませんでした。
